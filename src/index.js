@@ -4,12 +4,12 @@ import App from './App'
 import './index.scss'
 import { AuthProvider } from './context/AuthProvider'
 import { DarkModeContextProvider } from './context/darkModeContext'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <DarkModeContextProvider>
         <AuthProvider>
           <Routes>
@@ -17,6 +17,6 @@ root.render(
           </Routes>
         </AuthProvider>
       </DarkModeContextProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 )
