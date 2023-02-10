@@ -8,7 +8,14 @@ const useLogin = (url) => {
 
   const login = async (data) => {
     setLoading(true)
-    await Axios.post(url, data)
+    await Axios.post(
+        url:url, 
+        data: data,
+        headers: {
+              'Content-Type": "application/json',
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Credentials': true,
+        })
       .then((res) => {
         console.log(res)
         setData(res)
