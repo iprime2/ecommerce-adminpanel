@@ -12,7 +12,7 @@ const useLogin = (url) => {
         url:url, 
         data: data,
         headers: {
-              'Content-Type": "application/json',
+              'Content-Type': 'application/json',
               'Access-Control-Allow-Origin': '*',
               'Access-Control-Allow-Credentials': true,
         })
