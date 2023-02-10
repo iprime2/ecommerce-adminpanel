@@ -9,7 +9,7 @@ const useLogin = (url) => {
   const login = async (data) => {
     setLoading(true)
     await Axios.post(
-        url:url, 
+        url:(url), 
         data: data,
         headers: {
               'Content-Type': 'application/json',
