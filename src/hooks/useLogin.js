@@ -9,13 +9,15 @@ const useLogin = (url) => {
   const login = async (data) => {
     setLoading(true)
     await Axios.post(
-        url:(url), 
-        data: data,
+        url, 
+        JSON.stringfy(data),
         headers: {
               'Content-Type': 'application/json',
               'Access-Control-Allow-Origin': '*',
               'Access-Control-Allow-Credentials': true,
-        })
+        },
+        withCredentials: true,
+    )
       .then((res) => {
         console.log(res)
         setData(res)
