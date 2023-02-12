@@ -26,6 +26,7 @@ const Login = () => {
     ReactSession.get('isLogged') || false
   )
   const loginUrl = `${process.env.REACT_APP_API_URL}auth/login`
+  console.log(loginUrl)
   const [data, login, error, loading] = useLogin(loginUrl)
 
   const [loginData, setLoginData] = useState({
