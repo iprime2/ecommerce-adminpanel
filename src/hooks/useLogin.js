@@ -14,7 +14,7 @@ const useLogin = (url) => {
       {
         headers: {
               'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Origin': 'https://ecommerce-admin-api.vercel.app',
           'Access-Control-Allow-Methods': 'POST',
               'Access-Control-Allow-Credentials': true,
         },
