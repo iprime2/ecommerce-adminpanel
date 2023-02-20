@@ -14,7 +14,7 @@ const useLogin = (url) => {
       {
         headers: {
               'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': 'https://ecommerce-admin-api.vercel.app',
+              'Access-Control-Allow-Origin': 'https://sushil-ecommerce-admin.on.fleek.co',
           'Access-Control-Allow-Methods': 'POST',
               'Access-Control-Allow-Credentials': true,
         },
