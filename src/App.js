@@ -27,7 +27,7 @@ function App() {
         <Route path='/login' element={<Login />} />
 
         <Route path='/' element={<Nav />}>
-          <Route element={<RequireAuth />}>
+          {/*<Route element={<RequireAuth />}>*/}
             <Route index element={<Dashboard nav={true} />} />
             {/*users */}
             <Route
@@ -162,7 +162,7 @@ function App() {
                 />
               }
             />
-          </Route>
+{/*</Route>*/}
 
           <Route path='logout' element={<Logout />} />
 
