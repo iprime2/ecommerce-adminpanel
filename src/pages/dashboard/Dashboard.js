@@ -16,11 +16,11 @@ const Dashboard = ({ selected, nav }) => {
   )
   return (
     <>
-      {!isLogged ? (
+    {/*!isLogged ? (
         <>
           <Navigate to='/login' replace={true} />
         </>
-      ) : (
+      ) : (*/}
         <div className='dashboard'>
           {nav ? '' : <Sidebar selected={selected} />}
           <div className='dashboardContainer'>
@@ -41,7 +41,7 @@ const Dashboard = ({ selected, nav }) => {
             </div>
           </div>
         </div>
-      )}
+      )*/}
     </>
   )
 }
