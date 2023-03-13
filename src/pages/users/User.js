@@ -9,7 +9,7 @@ import { Skeleton } from '@mui/material'
 const User = ({ type, url, showTitle, selected, nav }) => {
   const [updated, setUpdated] = useState(false)
   const [data, loading] = useGetAll(url, type)
-  const [rowsData, setRowsData] = useState(null)
+  const [rowsData, setRowsData] = useState()
 
   useEffect(() => {
     console.log(data)
