@@ -13,7 +13,8 @@ const User = ({ type, url, showTitle, selected, nav }) => {
 
   useEffect(() => {
     const update = () => {
-      setRowsData(data)
+      setRowsData([data])
+      console.log(rowsData)
     }
     console.log(data)
     update()
