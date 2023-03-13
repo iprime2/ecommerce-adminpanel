@@ -13,13 +13,9 @@ const User = ({ type, url, showTitle, selected, nav }) => {
 
   useEffect(() => {
     console.log(data)
-    setRowsData((prev) => data)
+    setRowsData(data)
     console.log(rowsData)
   }, [data])
-
-  useEffect(() => {
-    console.log(loading)
-  }, [loading])
 
   return (
     <div className='user'>
