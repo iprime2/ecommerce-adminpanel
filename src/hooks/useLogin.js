@@ -8,19 +8,16 @@ const useLogin = (url) => {
 
   const login = async (data) => {
     setLoading(true)
-    await Axios.post(
-        url, 
-        data,
-      {
-        headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': 'https://sushil-ecommerce-admin.on.fleek.co',
-          'Access-Control-Allow-Methods': 'POST',
-              'Access-Control-Allow-Credentials': true,
-        },
-        withCredentials: true,
-      }
-    )
+    await Axios.post(url, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':
+          'https://sushil-ecommerce-admin.on.fleek.co',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Credentials': true,
+      },
+      withCredentials: true,
+    })
       .then((res) => {
         console.log(res)
         setData(res)
