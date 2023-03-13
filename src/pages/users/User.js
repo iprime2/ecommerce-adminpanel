@@ -12,9 +12,11 @@ const User = ({ type, url, showTitle, selected, nav }) => {
   const [rowsData, setRowsData] = useState([])
 
   useEffect(() => {
+    const update = () => {
+      setRowsData(data)
+    }
     console.log(data)
-    setRowsData(data)
-    console.log(rowsData)
+    update()
   }, [data])
 
   return (
