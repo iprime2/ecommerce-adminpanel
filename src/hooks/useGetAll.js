@@ -8,7 +8,6 @@ const useGetAll = (url, type) => {
 
   const getAll = async () => {
     setLoading(true)
-    console.log(url)
     await Axios.get(url, {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
