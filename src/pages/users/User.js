@@ -9,11 +9,10 @@ import { Skeleton } from '@mui/material'
 const User = ({ type, url, showTitle, selected, nav }) => {
   const [updated, setUpdated] = useState(false)
   const [data, loading] = useGetAll(url, type)
-  const [rowsData, setRowsData] = useState([])
+  const [rowsData, setRowsData] = useState()
 
   useEffect(() => {
-    console.log(data)
-    setRowsData((prev) => [...prev, data])
+    setRowsData(data)
     return () => {}
   }, [data])
 
@@ -22,7 +21,7 @@ const User = ({ type, url, showTitle, selected, nav }) => {
       {nav ? '' : <Sidebar selected={selected} />}
       <div className='userContainer'>
         {nav ? '' : <Navbar />}
-        {!loading ? (
+        {loading ? (
           rowsData && (
             <DataTable
               nav={nav}

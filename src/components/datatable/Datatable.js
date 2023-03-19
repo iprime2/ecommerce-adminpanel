@@ -8,7 +8,7 @@ import useDelete from '../../hooks/useDelete'
 const DataTable = ({ rowsData, setUpdated, type, url, showTitle, nav }) => {
   const [deleteItem] = useDelete(url, type)
   const [cols, setCols] = useState([])
-
+  console.log(rowsData)
   useEffect(() => {
     switch (type) {
       case 'users':
