@@ -13,11 +13,8 @@ const User = ({ type, url, showTitle, selected, nav }) => {
 
   useEffect(() => {
     console.log(data)
-    const unSub = setRowsData((prev) => [...prev, data])
-    return () => {
-      unSub()
-      console.log(rowsData)
-    }
+    setRowsData((prev) => [...prev, data])
+    return () => {}
   }, [data])
 
   return (
