@@ -12,9 +12,11 @@ const User = ({ type, url, showTitle, selected, nav }) => {
   const [rowsData, setRowsData] = useState([])
 
   useEffect(() => {
-    console.log(data)
-    setRowsData((prev) => [...prev, data])
-    console.log(rowsData)
+    const unSub = setRowsData((prev) => [...prev, data])
+    return () => {
+      unSub()
+      console.log(rowsData)
+    }
   }, [data])
 
   return (
