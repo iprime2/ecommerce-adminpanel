@@ -2,6 +2,16 @@
   background-color: #222;
   color: rgb(156, 156, 156);
 
+  .view {
+    background-color: #112538;
+  }
+  .create {
+    background-color: #112538;
+
+    input {
+      color: #d1d0d0;
+    }
+  }
   .chartGrid {
     stroke: rgba(228, 228, 228, 0.219);
   }
@@ -61,13 +71,26 @@
   }
 
   .datatable {
-    .datagrid {
-      color: gray;
+    background-color: #112538;
 
-      .viewButton,
+    .datagrid {
+      color: rgb(175, 175, 175);
+
+      .viewButton {
+        border-color: rgb(66, 66, 254);
+        color: rgb(66, 66, 254);
+
+        &:hover {
+          color: white;
+        }
+      }
       .deleteButton {
-        color: gray;
-        border-color: #333;
+        border-color: rgb(255, 91, 91);
+        color: rgb(255, 91, 91);
+
+        &:hover {
+          color: white;
+        }
       }
     }
   }

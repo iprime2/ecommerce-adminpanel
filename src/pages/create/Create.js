@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Sidebar from '../../components/sidebar/Sidebar'
 import Navbar from '../../components/navbar/Navbar'
 import './create.scss'
@@ -6,8 +6,9 @@ import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUpload
 import usePost from '../../hooks/usePost'
 
 const Create = ({ inputs, title, selected, nav }) => {
-  const userUrl = `${process.env.API_URL}auth/register`
-  const [data, post, loading, error] = usePost(userUrl)
+  const userUrl = `${process.env.REACT_APP_API_URL}auth/register`
+  const [data, post, loading, error, status] = usePost(userUrl)
+  const [success, setSuccess] = useState(false)
   const [file, setFile] = useState('')
   const [createData, setCreateData] = useState({
     username: '',
@@ -22,11 +23,12 @@ const Create = ({ inputs, title, selected, nav }) => {
     e.preventDefault()
 
     const { name, value } = e.target
-    console.log(value)
     setCreateData((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = (e) => {
+    if (success) setSuccess(false)
+
     e.preventDefault()
     const sendCreateData = {
       name: createData.name,
@@ -36,6 +38,19 @@ const Create = ({ inputs, title, selected, nav }) => {
     }
     post(sendCreateData)
   }
+
+  console.log(status)
+  function refreshPage() {
+    window.location.reload(false)
+  }
+
+  useEffect(() => {
+    if (status) {
+      setSuccess(true)
+    }
+
+    return () => {}
+  }, [status])
 
   return (
     <div className='create'>
@@ -81,8 +96,11 @@ const Create = ({ inputs, title, selected, nav }) => {
                   </div>
                 )
               })}
+              <button type='reset'>Reset</button>
               <button onClick={handleSubmit}>Send</button>
             </form>
+            {success && <p className='Success'>User Created Successfully!</p>}
+            {error && <p className='fail'>Something went wrong</p>}
           </div>
         </div>
       </div>

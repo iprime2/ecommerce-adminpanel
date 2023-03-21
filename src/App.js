@@ -28,141 +28,142 @@ function App() {
 
         <Route path='/' element={<Nav />}>
           {/*<Route element={<RequireAuth />}>*/}
-            <Route index element={<Dashboard nav={true} />} />
-            {/*users */}
-            <Route
-              path='users'
-              element={
-                <User
-                  nav={true}
-                  type={'users'}
-                  current={'users'}
-                  url={userUrl}
-                  showTitle={true}
-                  selected={'users'}
-                />
-              }
-            />
-            <Route
-              path='users/:id'
-              element={
-                <View
-                  nav={true}
-                  type={'users'}
-                  url={userUrl}
-                  selected={'users'}
-                />
-              }
-            />
-            <Route
-              path='users/edit/:id'
-              element={
-                <Edit
-                  nav={true}
-                  inputs={userInputs}
-                  url={userUrl}
-                  title={'Edit User Details'}
-                  selected={'users'}
-                />
-              }
-            />
-            <Route
-              path='users/create'
-              element={
-                <Create
-                  nav={true}
-                  inputs={userInputs}
-                  title={'Add New Users'}
-                  selected={'users'}
-                />
-              }
-            />
-            {/*end users */}
+          <Route index element={<Dashboard nav={true} />} />
+          {/*users */}
+          <Route
+            path='users'
+            element={
+              <User
+                nav={true}
+                type={'users'}
+                current={'users'}
+                url={userUrl}
+                showTitle={true}
+                selected={'users'}
+              />
+            }
+          />
+          <Route
+            path='users/:id'
+            element={
+              <View
+                nav={true}
+                type={'users'}
+                url={userUrl}
+                selected={'users'}
+              />
+            }
+          />
+          <Route
+            path='users/edit/:id'
+            element={
+              <Edit
+                nav={true}
+                inputs={userInputs}
+                url={userUrl}
+                title={'Edit User Details'}
+                selected={'users'}
+              />
+            }
+          />
+          <Route
+            path='users/create'
+            element={
+              <Create
+                nav={true}
+                url={userUrl}
+                inputs={userInputs}
+                title={'Add New Users'}
+                selected={'users'}
+              />
+            }
+          />
+          {/*end users */}
 
-            {/*products */}
+          {/*products */}
 
-            <Route
-              path='products'
-              element={
-                <User
-                  nav={true}
-                  type={'products'}
-                  url={productUrl}
-                  showTitle={true}
-                  selected={'products'}
-                />
-              }
-            />
+          <Route
+            path='products'
+            element={
+              <User
+                nav={true}
+                type={'products'}
+                url={productUrl}
+                showTitle={true}
+                selected={'products'}
+              />
+            }
+          />
 
-            <Route
-              path='products/:id'
-              element={
-                <View
-                  nav={true}
-                  type={'products'}
-                  url={productUrl}
-                  selected={'products'}
-                />
-              }
-            />
-            <Route
-              path='products/create'
-              element={
-                <Create
-                  nav={true}
-                  inputs={productInputs}
-                  title={'Add New Users'}
-                  selected={'products'}
-                />
-              }
-            />
+          <Route
+            path='products/:id'
+            element={
+              <View
+                nav={true}
+                type={'products'}
+                url={productUrl}
+                selected={'products'}
+              />
+            }
+          />
+          <Route
+            path='products/create'
+            element={
+              <Create
+                nav={true}
+                inputs={productInputs}
+                title={'Add New Users'}
+                selected={'products'}
+              />
+            }
+          />
 
-            {/*end products */}
+          {/*end products */}
 
-            <Route
-              path='reviews'
-              element={
-                <User
-                  nav={true}
-                  type={'reviews'}
-                  url={reviewsUrl}
-                  showTitle={false}
-                  selected={'reviews'}
-                />
-              }
-            />
+          <Route
+            path='reviews'
+            element={
+              <User
+                nav={true}
+                type={'reviews'}
+                url={reviewsUrl}
+                showTitle={false}
+                selected={'reviews'}
+              />
+            }
+          />
 
-            <Route
-              path='reviews/:id'
-              element={
-                <View type={'reviews'} url={reviewsUrl} selected={'reviews'} />
-              }
-            />
-            <Route
-              path='Orders'
-              element={
-                <User
-                  nav={true}
-                  type={'orders'}
-                  url={orderUrl}
-                  showTitle={false}
-                  selected={'orders'}
-                />
-              }
-            />
+          <Route
+            path='reviews/:id'
+            element={
+              <View type={'reviews'} url={reviewsUrl} selected={'reviews'} />
+            }
+          />
+          <Route
+            path='Orders'
+            element={
+              <User
+                nav={true}
+                type={'orders'}
+                url={orderUrl}
+                showTitle={false}
+                selected={'orders'}
+              />
+            }
+          />
 
-            <Route
-              path='orders/:id'
-              element={
-                <View
-                  nav={true}
-                  type={'orders'}
-                  url={orderUrl}
-                  selected={'orders'}
-                />
-              }
-            />
-{/*</Route>*/}
+          <Route
+            path='orders/:id'
+            element={
+              <View
+                nav={true}
+                type={'orders'}
+                url={orderUrl}
+                selected={'orders'}
+              />
+            }
+          />
+          {/*</Route>*/}
 
           <Route path='logout' element={<Logout />} />
 

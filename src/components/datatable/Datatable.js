@@ -4,10 +4,31 @@ import { DataGrid } from '@mui/x-data-grid'
 import { productColumns, userColumns, reviewsColumns } from '../../datasource'
 import { Link } from 'react-router-dom'
 import useDelete from '../../hooks/useDelete'
+import Axios from 'axios'
 
 const DataTable = ({ rowsData, setUpdated, type, url, showTitle, nav }) => {
-  const [deleteItem] = useDelete(url, type)
+  //const [deleteItem, error, loading, setId] = useDelete(url, type)
   const [cols, setCols] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  function refreshPage() {
+    window.location.reload(false)
+  }
+
+  const deleteItem = async (id) => {
+    setLoading(true)
+    console.log(url + id)
+    await Axios.delete(url + id)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    setLoading(false)
+    refreshPage()
+    return () => {}
+  }
 
   useEffect(() => {
     switch (type) {
@@ -26,6 +47,7 @@ const DataTable = ({ rowsData, setUpdated, type, url, showTitle, nav }) => {
   }, [type])
 
   const deleteData = (id) => {
+    console.log(id)
     deleteItem(id)
     setUpdated(true)
   }
